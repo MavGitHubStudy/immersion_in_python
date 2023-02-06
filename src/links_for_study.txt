@@ -1,2 +1,0 @@
-Найти корни квадратного уравнения
-https://younglinux.info/python/task/quadratic
