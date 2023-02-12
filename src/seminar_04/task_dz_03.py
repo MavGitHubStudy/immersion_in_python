@@ -5,3 +5,22 @@
 Если ключ не хешируем, используйте его строковое
 представление.
 """
+
+
+def key_arguments(**kwargs):
+    print(kwargs)
+    d = {}
+    for k, v in kwargs.items():
+        d[v] = k
+    return d
+
+
+key_arguments(par1=1,
+              par2=0.2,
+              par3='test',
+              par4=[1, 2, 3],
+              par5={'one': 1,
+                    'two': 2,
+                    'three': 3,
+                    }
+              )
