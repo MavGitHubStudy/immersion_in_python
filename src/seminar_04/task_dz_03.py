@@ -8,19 +8,25 @@
 
 
 def key_arguments(**kwargs):
-    print(kwargs)
     d = {}
     for k, v in kwargs.items():
-        d[v] = k
+        if isinstance(v, list | dict | set | bytearray):
+            d[str(v)] = k
+        else:
+            d[v] = k
     return d
 
 
-key_arguments(par1=1,
-              par2=0.2,
-              par3='test',
-              par4=[1, 2, 3],
-              par5={'one': 1,
-                    'two': 2,
-                    'three': 3,
-                    }
-              )
+source_d = {'par1': 1,
+            'par2': 0.2,
+            'par3': 'test',
+            'par4': [1, 2, 3],
+            'par5': {'one': 1, 'two': 2, 'three': 3},
+            }
+
+print(source_d)
+res = key_arguments(**source_d)
+print(res)
+
+b = bytearray(b'hello world')
+print(key_arguments(par6=10, par7=b))
