@@ -33,14 +33,10 @@ LOWER_LIMIT = 2
 UPPER_LIMIT = 10
 COLUMNS = 4
 
-step_i = step_j = step_k = 0
+
 for i in range(LOWER_LIMIT, UPPER_LIMIT, COLUMNS):  # 2 , 6(2+4)
-    step_i += 1
     for j in range(LOWER_LIMIT, UPPER_LIMIT + 1):
-        step_j += 1
         for k in range(i, i + COLUMNS):
-            step_k += 1
-            # print(i, j, k)
             if j == UPPER_LIMIT and k == i + COLUMNS - 1:
                 print(f'{k:>} x {j:>2} = {k * j:>2}\n\n', end='')
             elif k == i + COLUMNS - 1:
@@ -64,4 +60,3 @@ table = (f"{k:>} x {j:>2} = {k * j:>2}\n\n" if j == UPPER_LIMIT and
          )
 
 print(*table, end='')
-print(f'{step_i = } {step_j = } {step_k = }')
