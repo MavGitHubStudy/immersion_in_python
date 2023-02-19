@@ -9,6 +9,7 @@
 Функция в цикле вызывает загадывающую функцию, чтобы
 передать ей все свои загадки.
 """
+__all__ = ['next_variants', 'get_play']
 
 
 def next_variants(question=None, answers=None, all_variants=None) -> dict[
@@ -21,10 +22,10 @@ def next_variants(question=None, answers=None, all_variants=None) -> dict[
 
 
 def get_play(variants_: dict) -> None:
-    [one_hundred_for_one(i, j) for i, j in variants_.items()]
+    [_one_hundred_for_one(i, j) for i, j in variants_.items()]
 
 
-def one_hundred_for_one(question: str, answers: list[str], count=3) -> int:
+def _one_hundred_for_one(question: str, answers: list[str], count=3) -> int:
     other_count = 0
     while other_count < count:
         print(question)
