@@ -15,16 +15,23 @@
 - Проверку года на високосность вынести в отдельную
   защищённую функцию.
 """
+MIN_YEAR = 1
+MAX_YEAR = 9999
+
+SMALL_YEAR = 4
+MIDDLE_YEAR = 100
+BIG_YEAR = 400
 
 
 def check_date(date: str) -> bool:
-    MIN_YEAR = 1
-    MAX_YEAR = 9999
-
     if date[0] == '-':
         return False
     _list_date = date.split('.')
     _day, _month, _year = _list_date[0], _list_date[1], _list_date[2]
+
+    if not (_day.isdigit() and _month.isdigit() and _year.isdigit()):
+        return False
+
     num_day = int(_day)
     num_month = int(_month)
     num_year = int(_year)
@@ -51,9 +58,6 @@ def check_date(date: str) -> bool:
 
 
 def _check_leap(year: int) -> bool:
-    SMALL_YEAR = 4
-    MIDDLE_YEAR = 100
-    BIG_YEAR = 400
     # GREG_YEAR = 1582
 
     # year = int(input('Введите год в формате yyyy: '))
@@ -70,10 +74,11 @@ def _check_leap(year: int) -> bool:
 
 
 if __name__ == "__main__":
-    print(check_date("20.02.0000"))
-    print(check_date("20.02.2023"))
-    print(check_date("20.02.10000"))
-    print(check_date("13.19.1970"))
-    print(check_date("29.02.2024"))
-    print(check_date("34.02.2024"))
-    print(check_date("31.11.2024"))
+    print(check_date("01.02.2020"))
+    # print(check_date("20.02.0000"))
+    # print(check_date("20.02.2023"))
+    # print(check_date("20.02.10000"))
+    # print(check_date("13.19.1970"))
+    # print(check_date("29.02.2024"))
+    # print(check_date("34.02.2024"))
+    # print(check_date("31.11.2024"))
