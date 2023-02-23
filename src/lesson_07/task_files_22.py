@@ -1,4 +1,5 @@
 # 46:20
+<<<<<<< HEAD
 text = ['Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'Consequatur debitis explicabo laboriosam sint suscipit temporibus '
         'veniam?',
@@ -13,3 +14,5 @@ with open('new_data.txt', 'w', encoding='utf-8') as f:
     # файла(205)
 print(f.tell())  # ValueError: I/O operation on closed file.
 # мы не можем определить позицию конца файла после того, как файл был закрыт
+=======
+>>>>>>> refs/remotes/origin/main
