@@ -23,21 +23,19 @@ from pathlib import Path
 from typing import TextIO
 
 
+def read_or_begin(fd: TextIO) -> str:
+    while(line := fd.readline()) == '':
+        fd.seek(0)  # в начало файла
+    return line[:-1]  # возвращаем строку без последнего символа \n
+
+
 # def read_or_begin(fd: TextIO) -> str:
 #     line = fd.readline()
 #     if line == '':
 #         fd.seek(0)  # в начало файла
-#         line = fd.readline()
+#         return read_or_begin(fd)  # избавились от дублирования строк через
+#         # рекурсивный вызов
 #     return line[:-1]  # возвращаем строку без последнего символа \n
-
-
-def read_or_begin(fd: TextIO) -> str:
-    line = fd.readline()
-    if line == '':
-        fd.seek(0)  # в начало файла
-        return read_or_begin(fd)  # избавились от дублирования строк через
-        # рекурсивный вызов
-    return line[:-1]  # возвращаем строку без последнего символа \n
 
 
 def unification_file(numbers: Path, strings: Path, result: Path) -> None:
