@@ -12,7 +12,9 @@ task_02.py
 - Для файлов сохраните его размер в байтах, а для директорий
   размер файлов в ней с учётом всех вложенных файлов и директорий.
 """
-__all__ = ['dir2list', 'save2json', 'save2csv']
+__all__ = ['dir2list', 'save2json', 'load4json',
+                       'save2csv', 'load4csv',
+                       'save2pickle', 'load4pickle']
 import os
 import json
 import csv
@@ -40,18 +42,22 @@ def dir2list(crawl_path: str) -> List:
             json_list.append(json_dict)
 
     return json_list
-    # print(json_list)
-    # for item in json_list:
-    #     print(item)
 
 
 def save2json(crawl_list: List, file_name: Path) -> None:
+    # открываем json-файл для записи
     with open(file_name, 'w', encoding='utf-8') as json_f:
         json.dump(crawl_list, json_f, indent=2)
 
 
+def load4json(file_name: Path) -> List:
+    # открываем json-файл для чтения
+    with open(file_name, 'r', encoding='utf-8') as json_f:
+        return json.load(json_f)
+
+
 def save2csv(crawl_list: List, file_name: Path) -> None:
-    # открываем файл .csv для записи, newline=''
+    # открываем csv-файл для записи, newline=''
     with open(file_name, 'w', newline='', encoding='utf-8') as csv_f:
         fieldnames = ['name', 'parent', 'is_dir', 'size']
         writer = csv.DictWriter(csv_f, fieldnames=fieldnames)
@@ -59,16 +65,40 @@ def save2csv(crawl_list: List, file_name: Path) -> None:
         writer.writerows(crawl_list)  # формируют csv-файл
 
 
+def load4csv(file_name: Path) -> List:
+    # открываем csv-файл для чтения
+    with open(file_name, 'r', encoding='utf-8') as csv_f:
+        file_reader = csv.reader(csv_f, delimiter=",")
+        all_data = []
+        count = 0
+        for row in file_reader:
+            if count != 0:
+                _dict = dict()
+                _dict['name'] = row[0]
+                _dict['parent'] = row[1]
+                _dict['is_dir'] = True if row[2] == 'True' else False
+                _dict['size'] = int(row[3])
+                all_data.append(_dict)
+            count += 1
+        return all_data
+
+
 def save2pickle(crawl_list: List, file_name: Path) -> None:
-    # открываем файл .pickle для записи
+    # открываем pickle-файл для записи
     with open(file_name, 'wb') as pickle_f:
         pickle.dump(crawl_list, pickle_f)
 
 
 def load4pickle(file_name: Path) -> List:
-    # открываем файл .pickle для чтения
+    # открываем pickle-файл для чтения
     with open(file_name, 'rb') as pickle_f:
         return pickle.load(pickle_f)
+
+
+def list_comparison(lst_1: List, lst_2: List) -> bool:
+    res = [x for x in lst_1 +
+           lst_2 if x not in lst_1 or x not in lst_2]
+    return not res
 
 
 if __name__ == '__main__':
