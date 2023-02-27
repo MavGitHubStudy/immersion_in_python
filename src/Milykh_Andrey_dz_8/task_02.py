@@ -47,5 +47,10 @@ if __name__ == '__main__':
     show_comparison("Lists res_list and csv_list are", res_)
 
     json_list = dl.load4json(Path('file_in.json'))
+<<<<<<< HEAD
     res_ = dl.list_comparison(json_list, res_list)
     show_comparison("Lists res_list and json_list are", res_)
+=======
+    res_ = dl.list_comparison(csv_list, res_list)
+    show_comparison("Lists res_list and csv_list are", res_)
+>>>>>>> 75b22bd3a00b71aeac98bc40d58510f2fecff424

@@ -12,9 +12,14 @@ task_02.py
 - Для файлов сохраните его размер в байтах, а для директорий
   размер файлов в ней с учётом всех вложенных файлов и директорий.
 """
+<<<<<<< HEAD
 __all__ = ['dir2list', 'save2json', 'load4json',
                        'save2csv', 'load4csv',
                        'save2pickle', 'load4pickle']
+=======
+__all__ = ['dir2list', 'save2json', 'save2csv', 'load4csv',
+           'save2pickle', 'load4pickle']
+>>>>>>> 75b22bd3a00b71aeac98bc40d58510f2fecff424
 import os
 import json
 import csv
