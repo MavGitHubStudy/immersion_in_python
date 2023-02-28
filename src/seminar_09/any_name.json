@@ -1,0 +1,23 @@
+[
+  {
+    "args": [
+      10
+    ],
+    "result": 10
+  }
+][
+  {
+    "args": [
+      10
+    ],
+    "result": 10
+  },
+  {
+    "args": [
+      10
+    ],
+    "name": "Stanislav",
+    "x": 3,
+    "result": 10
+  }
+]
