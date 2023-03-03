@@ -1,7 +1,7 @@
 class Person:  # 32:00
     max_up = 3
 
-    def __int__(self, name, race='unknown'):
+    def __init__(self, name, race='unknown'):
         self.name = name
         self.race = race
         self.level = 1
@@ -9,3 +9,19 @@ class Person:  # 32:00
 
     def level_up(self):
         self.level += 1
+
+
+p1 = Person('Сильвана', 'Эльф')
+p2 = Person('Иван', 'Человек')
+p3 = Person('Грогу')
+print(f'{p1.level = }, {p2.level = }, {p3.level = }')
+p3.level_up()
+p1.level_up()
+p3.level_up()
+print(f'{p1.level = }, {p2.level = }, {p3.level = }')
+"""
+p1.level = 1, p2.level = 1, p3.level = 1
+p1.level = 2, p2.level = 1, p3.level = 3
+
+Process finished with exit code 0
+"""
