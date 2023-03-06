@@ -5,10 +5,10 @@ class User:  # object
         self.name = name
         print(f'Создал {self.name = }')
 
-    def __new__(cls, *args, **kwargs):
-        instance = super().__new__(cls)
+    def __new__(cls, *args, **kwargs):  # обязательная строка!
+        instance = super().__new__(cls)  # обязательный вызов super() !
         print(f'Создал класс {cls}')
-        return instance
+        return instance  # обязательный возврат instance !
 
 
 print('Создаём первый раз')
