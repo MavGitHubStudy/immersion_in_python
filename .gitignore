@@ -7,3 +7,13 @@ __pycache__
 .vscode
 *.pyc
 var
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+### main template
+
