@@ -1,0 +1,11 @@
+SQLite – Установка
+https://coderlessons.com/tutorials/bazy-dannykh/vyuchit-sqlite/sqlite-ustanovka
+
+Как установить SQLite и браузер SQLite в Ubuntu
+https://setiwik.ru/kak-ustanovit-sqlite-i-brauzer-sqlite-v-ubuntu/
+
+How To Use the sqlite3 Module in Python 3
+https://www.digitalocean.com/community/tutorials/how-to-use-the-sqlite3-module-in-python-3
+
+Pycharm 2019.3 Подключение SQLite Database Операция
+https://russianblogs.com/article/15172161555/
