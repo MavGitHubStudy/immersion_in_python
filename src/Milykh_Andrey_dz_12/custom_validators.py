@@ -41,10 +41,12 @@ class String(Validator):
     проверяет заданную минимальную или максимальную длину. Он также может
     проверять определяемый пользователем предикат."""
 
-    def __init__(self, minsize=None, maxsize=None, predicate=None):
+    def __init__(self, minsize=None, maxsize=None,
+                 predicate1=None, predicate2=None):
         self.minsize = minsize
         self.maxsize = maxsize
-        self.predicate = predicate
+        self.predicate1 = predicate1
+        self.predicate2 = predicate2
 
     def validate(self, value):
         if not isinstance(value, str):
@@ -57,7 +59,11 @@ class String(Validator):
             raise ValueError(
                 f'Expected {value!r} to be no bigger than {self.maxsize!r}'
             )
-        if self.predicate is not None and not self.predicate(value):
+        if self.predicate1 is not None and not self.predicate1(value):
             raise ValueError(
-                f'Expected {self.predicate} to be true for {value!r}'
+                f'Expected {self.predicate1} to be true for {value!r}'
+            )
+        if self.predicate2 is not None and not self.predicate2(value):
+            raise ValueError(
+                f'Expected {self.predicate2} to be true for {value!r}'
             )
