@@ -1,6 +1,5 @@
 import sqlite3
 
-
 # Step 1 — Creating a Connection to a SQLite Database
 connection = sqlite3.connect("test.db")
 print(connection.total_changes)
@@ -19,16 +18,11 @@ SQLite database will disappear as soon as your Python program exits. This might
 be convenient if you want a temporary sandbox to try something out in SQLite, 
 and don’t need to persist any data after your program exits.
 """
-connection = sqlite3.connect('test.db')
-print(connection.total_changes)
 
 # Step 2 — Adding Data to the SQLite Database
 cursor = connection.cursor()
 # cursor.execute("CREATE TABLE IF NOT EXISTS users (name TEXT, age INTEGER);")
 # cursor.execute("INSERT INTO users VALUES ('Гвидо', 66)")
-
-cursor.execute("""create table if not exists users(name, age);""")
-cursor.execute("""insert into users values ('Гвидо', 66);""")
 
 # Step 3 — Reading Data from the SQLite Database
 rows = cursor.execute("SELECT name, age FROM users").fetchall()
@@ -37,3 +31,11 @@ print(rows)
 connection.commit()
 connection.close()
 # 27:45
+
+connection = sqlite3.connect('sqlite.db')
+cursor = connection.cursor()
+cursor.execute("""create table if not exists users(name, age);""")
+cursor.execute("""insert into users values ('Гвидо', 66);""")
+connection.commit()
+connection.close()
+# 27:34

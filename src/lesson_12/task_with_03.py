@@ -38,4 +38,4 @@ with db as cur:  # AttributeError: __exit__
 
 Process finished with exit code 0
 """
-# # 30:47 - 31:51
+# 30:47 - 31:51

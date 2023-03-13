@@ -15,9 +15,11 @@ for num in fib:  # TypeError: iter() returned non-iterator of type 'Fibonacci'
 """
 Traceback (most recent call last):
   File "/home/.../lesson_12/task_iter_02.py", line 13, in <module>
-    for num in fib:  # TypeError: iter() returned non-iterator of type 'Fibonacci'
+    for num in fib:  # TypeError: iter() returned non-iterator of type 
+    'Fibonacci'
+
 TypeError: iter() returned non-iterator of type 'Fibonacci'
 
 Process finished with exit code 1
 """
-# 16:40
+# 16:41

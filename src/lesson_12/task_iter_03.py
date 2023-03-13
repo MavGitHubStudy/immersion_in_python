@@ -17,6 +17,7 @@ class Fibonacci:
 
 
 fib = Fibonacci(20, 100)
+
 for num in fib:  # TypeError: iter() returned non-iterator of type 'Fibonacci'
     print(num)
 """
@@ -27,4 +28,4 @@ for num in fib:  # TypeError: iter() returned non-iterator of type 'Fibonacci'
 
 Process finished with exit code 0
 """
-# 19:15
+# 18:35 - 24:33

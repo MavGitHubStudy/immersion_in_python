@@ -15,3 +15,10 @@ class Iter:
 chars = Iter(65, 91)  # A...A  - бесконечный цикл
 for c in chars:
     print(c)
+"""
+A
+...
+A
+ATraceback (most recent call last):
+"""
+# 23:00

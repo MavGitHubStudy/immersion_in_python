@@ -31,4 +31,4 @@ print(s)
 
 Process finished with exit code 0
 """
-# 7: 40
+# 7:40
