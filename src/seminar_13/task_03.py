@@ -1,5 +1,5 @@
 """
-task_03.py (40:40)
+task_03.py (40:40 - 43:15 - 45:10)
 """
 """
 Задание №3
@@ -9,3 +9,15 @@ task_03.py (40:40)
 - ошибка уровня,
 - ошибка доступа.
 """
+
+
+class ProjectException(Exception):
+    pass
+
+
+class LevelError(ProjectException):
+    pass
+
+
+class AccessError(ProjectException):
+    pass
