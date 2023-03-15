@@ -24,6 +24,19 @@ class User:
         self.idx = idx
         self.name = name
 
+    def __eq__(self, other):
+        return self.idx == other.idx and self.name == other.name
+        # if self.idx == other.idx and self.name == other.name:
+        #     return True
+        # else:
+        #     return False
+
+    def __hash__(self):
+        return hash((self.idx, self.name))
+
+    def __repr__(self):
+        return f'User(lvl={self.lvl}, idx={self.idx}, name={self.name})'
+
 
 def read_json(file: Path) -> set[User]:  # 1:01:56
     users = set()
