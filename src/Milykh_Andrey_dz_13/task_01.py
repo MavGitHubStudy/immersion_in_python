@@ -18,6 +18,7 @@ class Rectangle:
             self._length = length
         else:
             raise RectangleLengthException(length)
+
         if width is None:
             self._width = self.length
         else:
@@ -60,11 +61,11 @@ class Rectangle:
 def main():
     try:
         r1 = Rectangle(2, 2)
-        r1 = Rectangle(2)
+        # r1 = Rectangle(2)
         print(r1.width, r1.length)
         print(r1.perimeter())
         r1.length = 5
-        r1.width = 0
+        r1.width = 6
         print(r1.width, r1.length)
         print(r1.perimeter())
     except (RectangleLengthException, RectangleWidthException) as e:
