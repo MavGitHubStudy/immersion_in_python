@@ -1,0 +1,17 @@
+.idea
+.env
+.venv
+env
+venv
+__pycache__
+.pytest_cache
+.vscode
+*.pyc
+var
+# mav
+links_for_study.txt
+# IntelliJ project files
+#.idea
+*.iml
+out
+gen
