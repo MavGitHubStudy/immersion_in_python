@@ -1,4 +1,4 @@
-"""26:15 - 35:00 task_02.py"""
+"""26:15 - 35:00 task_02_1.py"""
 import logging
 from typing import Callable
 

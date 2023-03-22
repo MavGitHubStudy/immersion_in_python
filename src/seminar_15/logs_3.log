@@ -1,0 +1,5 @@
+INFO - 2023-03-22 11:34:12,376 - wrapper - 33 - {'args': (10, 42, 'Hello'), 'name': 'Stanislav', 'x': 3, 'y': True, 'result': 100}
+INFO - 2023-03-22 11:42:18,713 - wrapper - 34 - {'args': (10, 42, 'Hello'), 'name': 'Stanislav', 'x': 3, 'y': True, 'result': 100}
+INFO - 2023-03-22 11:50:26,246 - wrapper - {'args': (10, 42, 'Hello'), 'name': 'Stanislav', 'x': 3, 'y': True} - "result": 100
+INFO - 2023-03-22 11:53:54,694 - wrapper - {'args': (10, 42, 'Hello'), 'name': 'Stanislav', 'x': 3, 'y': True} - "result": 100
+INFO - 2023-03-22 12:01:30,539 - func: any_name - {'args': (10, 42, 'Hello'), 'name': 'Stanislav', 'x': 3, 'y': True} - "result": 100

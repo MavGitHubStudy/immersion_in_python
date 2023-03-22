@@ -1,1 +1,2 @@
-INFO:__main__:(10,), {'name': 'Stanislav', 'x': 3} - 100
+INFO:__main__:(10, 42, 'Hello'), {'name': 'Stanislav', 'x': 3, 'y': True} - 100
+INFO:__main__:{'args': (10, 42, 'Hello'), 'name': 'Stanislav', 'x': 3, 'y': True, 'result': 100}

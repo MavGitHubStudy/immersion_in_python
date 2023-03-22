@@ -1,4 +1,5 @@
-"""26:15 - 35:00 - 40:25 task_02_2.py"""
+"""26:15 - 35:00 - 40:25 - 41:25 task_02_3
+.py"""
 import logging
 from typing import Callable
 
@@ -22,8 +23,10 @@ logger = logging.getLogger(__name__)
 def deco_func(func: Callable):
     # нужно модифицировать wrapper !
     def wrapper(*args, **kwargs):
+        dct = {'args': args, **kwargs}
         result = func(*args, **kwargs)
-        logger.info(f'{str(args)}, {kwargs} - {result}')
+        dct['result'] = result
+        logger.info(dct)
         return result
 
     return wrapper
@@ -40,4 +43,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-# 37:43
+# 41:51
